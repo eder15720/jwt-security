@@ -5,7 +5,6 @@ import com.example.demo.infraestructure.exceptions.ConflictExeption;
 import com.example.demo.infraestructure.exceptions.ResourceNotFoundException;
 import com.example.demo.infraestructure.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class UsuarioService {
             return usuarioRepository.save(usuario);
 
         }catch(ConflictExeption e){
-            throw new ConflictExeption("Email já cadastrado" + usuario.getEmail());
+            throw new ConflictExeption("Email já cadastrado " + usuario.getEmail());
 
         }
     }
